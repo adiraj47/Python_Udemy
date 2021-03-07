@@ -1,3 +1,5 @@
+import colorama
+
 # Some ANSI escape sequences for colours and effects
 BLACK = '\u001b[30m'
 RED = '\u001b[31m'
@@ -23,6 +25,7 @@ def color_text(text: str, effect: str) -> None:
     color_effect = "{0}{1}{2}".format(effect, text, RESET)
     print(color_effect)
 
+colorama.init()
 color_text("This text will appear in red", RED)
 color_text("the", CYAN)
 color_text("Hello, Blue", BLUE)
@@ -37,3 +40,4 @@ color_text("Hello, Black", BLACK)
 # print(CYAN, "this text will be print in cyan")
 # print(BLUE, "This text will be print in blue")
 # print(BLUE, BOLD, "This text will be bold and blue.")
+colorama.deinit()
